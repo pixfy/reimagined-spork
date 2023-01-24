@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+.heroes-container {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.hero-image {
+  width: 4rem;
+  height: 6rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
