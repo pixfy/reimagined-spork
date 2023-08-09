@@ -1,4 +1,5 @@
 import "./App.css";
+import axios from "axios";
 import { useState } from "react";
 
 const API = process.env.REACT_APP_ENDPOINT;
@@ -15,11 +16,11 @@ function App() {
 
   function handleClick() {
     if (data.length === 0) {
-      fetch(`${API}/api/users`)
-        .then((res) => res.json())
-        .then((json) => {
-          addHero(json.user[clickCount]);
-          return setData(json.user);
+      axios
+        .get(`${API}/api/users`)
+        .then(({ data }) => {
+          addHero(data.user[clickCount]);
+          return setData(data.user);
         })
         .catch((error) => console.error("Erro: ", error));
 
