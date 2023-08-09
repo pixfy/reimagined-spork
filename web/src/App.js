@@ -1,6 +1,8 @@
 import "./App.css";
 import { useState } from "react";
 
+const API = process.env.REACT_APP_ENDPOINT;
+
 function App() {
   const [clickCount, setClickCount] = useState(0);
   const [enableBtn, setEnableBtn] = useState(true);
@@ -13,7 +15,7 @@ function App() {
 
   function handleClick() {
     if (data.length === 0) {
-      fetch("http://localhost:4000/api/users")
+      fetch(`${API}/api/users`)
         .then((res) => res.json())
         .then((json) => {
           addHero(json.user[clickCount]);
