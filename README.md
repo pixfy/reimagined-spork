@@ -12,3 +12,6 @@ Publish directory
 web/build
 Build status
 Active
+
+docker-compose up --build
+bash scripts/startup.sh
